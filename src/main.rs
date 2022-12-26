@@ -1,9 +1,9 @@
 use std::time::Instant;
 
 fn main() {
-    const TOTAL_SIZE: usize = 10000;
-    const NUMBER_1: usize = 19;
-    const NUMBER_2: usize = 32;
+    const TOTAL_SIZE: usize = 100000;
+    const NUMBER_1: usize = 121;
+    const NUMBER_2: usize = 53;
     
     let mut loop_a: usize = 0;
     let mut loop_b: usize = 0;
@@ -30,6 +30,7 @@ fn main() {
                 if loop_c >= (TOTAL_SIZE / NUMBER_2) + 1 {
                     println!("Completed! {:?}", a_list);
                     println!("Elapsed: {:.2?}", now.elapsed());
+                    println!("Total sum is: {}", a_list.iter().fold(0u64, |sum, i| sum + (*i as u64)));
                     break
                 }
             }
