@@ -2,9 +2,9 @@ use std::time::Instant;
 use std::collections::HashSet;
 
 fn main() {
-    const TOTAL_SIZE: usize = 100000;
-    const NUMBER_1: usize = 343;
-    const NUMBER_2: usize = 13;
+    const TOTAL_SIZE: usize = 10000;
+    const NUMBER_1: usize = 1;
+    const NUMBER_2: usize = 65537;
     let mut a_set: HashSet<usize> = (1..=TOTAL_SIZE).collect();
 
     let now = Instant::now();
@@ -20,7 +20,7 @@ fn main() {
     
     match a_set.iter().max() {
         Some(val) => println!("The maximum value is: {}", val),
-        None => println!("The set is empty."),
+        None => println!("You cannot set either number to 1"),
     }
     println!("Total sum is: {}", a_set.iter().sum::<usize>());
     println!("Elapsed: {:?}", now.elapsed());
